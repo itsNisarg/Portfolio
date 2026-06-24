@@ -372,65 +372,35 @@
     <section id="writing">
       <h2 class="section-title liquid-text">Writing.</h2>
 
-      <div class="writing-card reveal-up" id="writingCard">
-        <!-- loading state -->
-        <div class="writing-loading" id="writingLoading">
-          <span>Fetching latest post</span>
-          <span class="wdots"><span>.</span><span>.</span><span>.</span></span>
-        </div>
-        <!-- populated state (hidden until fetch) -->
-        <div class="writing-content" id="writingContent" style="display: none">
-          <div class="writing-eyebrow">
-            <span class="writing-badge">Latest Post</span>
-            <span class="writing-sep">·</span>
-            <span id="postDate" class="writing-meta-text"></span>
-            <span class="writing-sep">·</span>
-            <span id="postReadTime" class="writing-meta-text"></span>
-          </div>
-          <h3 class="writing-title liquid-text" id="postTitle"></h3>
-          <p class="writing-excerpt liquid-text" id="postExcerpt"></p>
-          <div class="writing-footer">
-            <a
-              href="#"
-              class="card-link writing-link"
-              id="postLink"
-              target="_blank"
-              rel="noopener"
-            >
-              <span>Read on Medium</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path
-                  d="M3 8h10M9 4l4 4-4 4"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-        <!-- error fallback (hidden by default) -->
-        <div class="writing-error" id="writingError" style="display: none">
-          <p class="writing-error-text">Couldn't load latest post.</p>
-          <a
-            href="https://nisarg-research.medium.com/"
-            class="card-link"
-            target="_blank"
-            rel="noopener"
-          >
-            <span>Visit Medium</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path
-                d="M3 8h10M9 4l4 4-4 4"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </a>
-        </div>
+      <!-- loading state -->
+      <div class="writing-loading" id="writingLoading">
+        <span>Fetching latest posts</span>
+        <span class="wdots"><span>.</span><span>.</span><span>.</span></span>
+      </div>
+
+      <!-- grid container for posts -->
+      <div class="writing-grid" id="writingGrid" style="display: none"></div>
+
+      <!-- error fallback (hidden by default) -->
+      <div class="writing-error" id="writingError" style="display: none">
+        <p class="writing-error-text">Couldn't load latest posts.</p>
+        <a
+          href="https://nisarg-research.medium.com/"
+          class="card-link"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>Visit Medium</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path
+              d="M3 8h10M9 4l4 4-4 4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
       </div>
     </section>
 

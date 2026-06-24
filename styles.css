@@ -597,6 +597,12 @@ body.cursor-hover .cursor-dot {
 #writing { border-top: 1px solid var(--border); }
 #writing .section-title { margin-bottom: 56px; }
 
+.writing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
 .writing-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -669,13 +675,7 @@ body.cursor-hover .cursor-dot {
   color: var(--text-1);
   margin-bottom: 20px;
 }
-.writing-excerpt {
-  font-size: 15px;
-  color: var(--text-2);
-  line-height: 1.78;
-  max-width: 700px;
-  margin-bottom: 36px;
-}
+
 .writing-footer {
   padding-top: 24px;
   border-top: 1px solid var(--border);
@@ -948,6 +948,7 @@ body.cursor-hover .cursor-dot {
   .hero-number { right: 24px; }
 
   #work, #about, #experience, #writing, #contact { padding: 100px 24px; }
+  .writing-grid { grid-template-columns: 1fr; gap: 16px; }
   .writing-card { padding: 28px; }
   .exp-entry { grid-template-columns: 52px 1fr; }
   .exp-badge { display: none; }

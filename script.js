@@ -63,10 +63,11 @@ document.addEventListener('mousemove', (e) => {
 })();
 
 const hoverTargets = 'a, button, .project-card, .card-link, .contact-email, .social-link, .nav-link, .nav-logo';
-document.querySelectorAll(hoverTargets).forEach((el) => {
+function applyCursorHover(el) {
   el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
   el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-});
+}
+document.querySelectorAll(hoverTargets).forEach(applyCursorHover);
 
 /* ─── Mouse aura ─────────────────────────────────────────── */
 const aura = document.createElement('div');
@@ -100,7 +101,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal-up').forEach((el) => revealObserver.observe(el));
 
 /* ─── 3-D card tilt ──────────────────────────────────────── */
-document.querySelectorAll('.project-card, .writing-card, .exp-entry, .about-right').forEach((card) => {
+function init3DTilt(card) {
   card.addEventListener('mousemove', (e) => {
     const { left, top, width, height } = card.getBoundingClientRect();
     const x = (e.clientX - left) / width  - 0.5;
@@ -110,7 +111,8 @@ document.querySelectorAll('.project-card, .writing-card, .exp-entry, .about-righ
   card.addEventListener('mouseleave', () => {
     card.style.transform = '';
   });
-});
+}
+document.querySelectorAll('.project-card').forEach(init3DTilt);
 
 /* ─── Liquid text reveal ─────────────────────────────────── */
 (function initLiquidText() {
@@ -150,13 +152,13 @@ document.querySelectorAll('.project-card, .writing-card, .exp-entry, .about-righ
   document.querySelectorAll('.liquid-text').forEach((el) => lo.observe(el));
 })();
 
-/* ─── Medium latest post ─────────────────────────────────── */
-(async function fetchLatestPost() {
+/* ─── Medium latest posts ────────────────────────────────── */
+(async function fetchLatestPosts() {
   const FEED    = 'https://nisarg-research.medium.com/feed';
   const API     = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(FEED)}`;
 
   const loading = document.getElementById('writingLoading');
-  const content = document.getElementById('writingContent');
+  const grid    = document.getElementById('writingGrid');
   const error   = document.getElementById('writingError');
 
   function stripHtml(html) {
@@ -177,19 +179,57 @@ document.querySelectorAll('.project-card, .writing-card, .exp-entry, .about-righ
     const data = await res.json();
     if (data.status !== 'ok' || !data.items?.length) throw new Error('empty');
 
-    const post = data.items[0];
-    document.getElementById('postDate').textContent     = fmtDate(post.pubDate);
-    document.getElementById('postReadTime').textContent = readTime(post.content || post.description);
-    document.getElementById('postTitle').textContent    = post.title;
-    document.getElementById('postExcerpt').textContent  =
-      stripHtml(post.description).replace(/\s+/g, ' ').trim().slice(0, 220) + '…';
-    document.getElementById('postLink').href = post.link;
+    const posts = data.items.slice(0, 2);
+    
+    posts.forEach((post, index) => {
+      const badgeText = index === 0 ? 'Latest Post' : 'Article';
+      const card = document.createElement('article');
+      card.className = 'writing-card reveal-up';
+      card.dataset.delay = index * 80;
+      
+      card.innerHTML = `
+        <div class="writing-eyebrow">
+          <span class="writing-badge">${badgeText}</span>
+          <span class="writing-sep">·</span>
+          <span class="writing-meta-text">${fmtDate(post.pubDate)}</span>
+          <span class="writing-sep">·</span>
+          <span class="writing-meta-text">${readTime(post.content || post.description)}</span>
+        </div>
+        <h3 class="writing-title liquid-text">${post.title}</h3>
+        <div class="writing-footer">
+          <a
+            href="${post.link}"
+            class="card-link writing-link"
+            target="_blank"
+            rel="noopener"
+          >
+            <span>Read on Medium</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+      `;
+      
+      grid.appendChild(card);
+      init3DTilt(card);
+      applyCursorHover(card);
+      const link = card.querySelector('.writing-link');
+      if (link) applyCursorHover(link);
+      revealObserver.observe(card);
+    });
 
     loading.style.display = 'none';
-    content.style.display = 'block';
+    grid.style.display    = 'grid';
 
-    /* re-run liquid text on the newly populated elements */
-    content.querySelectorAll('.liquid-text').forEach((el) => {
+    /* run liquid text on the newly populated elements */
+    grid.querySelectorAll('.liquid-text').forEach((el) => {
       const raw = el.textContent;
       el.innerHTML = raw.split(/(\s+)/).map(chunk =>
         /^\s+$/.test(chunk) ? chunk : `<span class="lw lw-in">${chunk}</span>`

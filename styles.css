@@ -31,7 +31,7 @@ body {
   background: var(--bg);
   color: var(--text-1);
   font-family: var(--f-body);
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.6;
   overflow-x: hidden;
   cursor: none;
@@ -185,6 +185,36 @@ body.cursor-hover .cursor-dot {
 }
 .nav-link:hover { color: var(--text-1); }
 .nav-link:hover::after { width: 100%; }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 14px;
+  background: none;
+  border: none;
+  cursor: none;
+  padding: 0;
+  z-index: 201;
+}
+.nav-toggle .bar {
+  width: 100%;
+  height: 2px;
+  background: var(--text-2);
+  transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
+}
+.nav-toggle:hover .bar {
+  background: var(--text-1);
+}
+.nav-toggle.active .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+  background: var(--text-1);
+}
+.nav-toggle.active .bar:nth-child(2) {
+  transform: translateY(-6px) rotate(-45deg);
+  background: var(--text-1);
+}
 
 /* ═══════════════════════════════════════════
    HERO
@@ -376,7 +406,7 @@ body.cursor-hover .cursor-dot {
   margin-bottom: 64px;
 }
 .section-desc {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-2);
   max-width: 340px;
   line-height: 1.7;
@@ -468,7 +498,7 @@ body.cursor-hover .cursor-dot {
   line-height: 1.1;
 }
 .card-desc {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-2);
   line-height: 1.7;
   flex: 1;
@@ -542,7 +572,7 @@ body.cursor-hover .cursor-dot {
 }
 
 .about-body {
-  font-size: 16px;
+  font-size: 17px;
   color: var(--text-2);
   line-height: 1.8;
   margin-bottom: 22px;
@@ -568,7 +598,7 @@ body.cursor-hover .cursor-dot {
   color: var(--text-3);
 }
 .skill-list {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-2);
 }
 
@@ -750,7 +780,7 @@ body.cursor-hover .cursor-dot {
   flex-wrap: wrap;
 }
 .social-link {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-2);
   font-weight: 500;
   transition: color 0.2s;
@@ -854,7 +884,7 @@ body.cursor-hover .cursor-dot {
 }
 
 .exp-title {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-2);
   font-family: var(--f-mono);
   letter-spacing: 0.02em;
@@ -868,7 +898,7 @@ body.cursor-hover .cursor-dot {
   gap: 5px;
 }
 .exp-bullets li {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-2);
   line-height: 1.55;
   padding-left: 16px;
@@ -946,6 +976,8 @@ body.cursor-hover .cursor-dot {
 
   #hero { padding: 0 24px; }
   .hero-number { right: 24px; }
+  .hero-word { font-size: clamp(64px, 12vw, 130px); }
+  .hero-scroll { display: none; }
 
   #work, #about, #experience, #writing, #contact { padding: 100px 24px; }
   .writing-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -965,7 +997,44 @@ body.cursor-hover .cursor-dot {
   .about-stats { gap: 28px; }
 }
 
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(7, 7, 7, 0.96);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    transition: right 0.5s var(--ease);
+    z-index: 199;
+  }
+  .nav-links.active {
+    right: 0;
+  }
+  .nav-link {
+    font-size: 24px;
+  }
+  .nav-link::after {
+    display: none;
+  }
+}
+
 @media (max-width: 540px) {
+  .hero-word {
+    font-size: clamp(48px, 14vw, 84px);
+  }
+  .hero-word--indent {
+    padding-left: 20px;
+  }
   .hero-bottom { flex-direction: column; gap: 16px; }
   .contact-headline { font-size: clamp(44px, 13vw, 72px); }
   .about-stats { flex-wrap: wrap; }

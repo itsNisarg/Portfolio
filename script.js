@@ -257,3 +257,22 @@ const sectionObserver = new IntersectionObserver((entries) => {
 }, { rootMargin: '-40% 0px -55% 0px' });
 
 sections.forEach((s) => sectionObserver.observe(s));
+
+/* ─── Mobile navigation menu ─────────────────────────────── */
+const navToggle = document.getElementById('navToggle');
+const navLinksContainer = document.querySelector('.nav-links');
+const navLinksArray = document.querySelectorAll('.nav-link');
+
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
+    navLinksContainer.classList.toggle('active');
+  });
+
+  navLinksArray.forEach((link) => {
+    link.addEventListener('click', () => {
+      navToggle.classList.remove('active');
+      navLinksContainer.classList.remove('active');
+    });
+  });
+}

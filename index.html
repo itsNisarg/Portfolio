@@ -19,7 +19,10 @@
   <body>
     <!-- Page Loader -->
     <div id="loader">
-      <div class="loader-line"></div>
+      <div class="loader-content">
+        <div class="loader-logo">NS</div>
+        <div class="loader-spinner"></div>
+      </div>
     </div>
 
     <!-- Custom Cursor -->
@@ -374,10 +377,10 @@
     <section id="writing">
       <h2 class="section-title liquid-text">Writing.</h2>
 
-      <!-- loading state -->
+      <!-- loading state (skeleton shimmer) -->
       <div class="writing-loading" id="writingLoading">
-        <span>Fetching latest posts</span>
-        <span class="wdots"><span>.</span><span>.</span><span>.</span></span>
+        <div class="shimmer-card"></div>
+        <div class="shimmer-card"></div>
       </div>
 
       <!-- grid container for posts -->

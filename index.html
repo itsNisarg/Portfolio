@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio — Nisarg Suthar</title>
+    <meta
+      name="description"
+      content="Software engineer with a research inclination."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Outfit:wght@800&family=Plus+Jakarta+Sans:wght@700;800&family=Space+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400&family=Syne:wght@400;700;800&family=Unbounded:wght@800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Page Loader -->
+    <div id="loader">
+      <div class="loader-line"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Navigation -->
+    <nav id="nav">
+      <a href="#hero" class="nav-logo">NS</a>
+      <div class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#writing" class="nav-link">Writing</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section id="hero">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+
+      <div class="hero-inner">
+        <div class="hero-name">
+          <span class="hero-word" data-delay="0">Nisarg</span>
+          <span class="hero-word hero-word--indent" data-delay="120"
+            >Suthar_</span
+          >
+        </div>
+
+        <div class="hero-rule"></div>
+
+        <div class="hero-bottom">
+          <div class="hero-role">
+            <p class="hero-title liquid-text">Software Engineer</p>
+            <p class="hero-subtitle liquid-text">
+              Research-Driven Problem Solver
+            </p>
+          </div>
+          <div class="hero-meta reveal-fade" data-delay="400">
+            <span class="status-dot"></span>
+            <span class="status-text">Open to opportunities</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll">
+        <div class="scroll-label">SCROLL</div>
+        <div class="scroll-track"><div class="scroll-thumb"></div></div>
+      </div>
+
+      <div class="hero-number">2025</div>
+    </section>
+
+    <!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+    <section id="about">
+      <div class="about-bg-word" aria-hidden="true">ABOUT</div>
+
+      <div class="about-grid">
+        <div class="about-left">
+          <h2 class="section-title liquid-text">Who I<br />Am.</h2>
+        </div>
+
+        <div class="about-right">
+          <p class="about-body liquid-text">
+            I'm a software engineer who prefers the question behind the ticket.
+            I build systems that are fast, honest, and maintainable — and I
+            spend the leftover hours pulling on research threads that don't have
+            clean answers yet.
+          </p>
+          <p class="about-body liquid-text">
+            My work lives at the intersection of data systems, machine learning,
+            and agentic AI. I care about correctness at scale and the kind of
+            craft that makes a codebase a pleasure to return to.
+          </p>
+
+          <div class="about-skills reveal-up" data-delay="200">
+            <div class="skill-group">
+              <span class="skill-label">Tech Stack</span>
+              <span class="skill-list"
+                >Python · PyTorch · Azure · Microsoft Agent Framework</span
+              >
+            </div>
+            <div class="skill-group">
+              <span class="skill-label">Focus Areas</span>
+              <span class="skill-list"
+                >Data Engineering · LLMs · Computational Neuroscience</span
+              >
+            </div>
+          </div>
+
+          <div class="about-stats reveal-up" data-delay="260">
+            <div class="stat">
+              <span class="stat-num">2+</span>
+              <span class="stat-desc">Years building</span>
+            </div>
+            <!-- <div class="stat">
+              <span class="stat-num">12</span>
+              <span class="stat-desc">Projects shipped</span>
+            </div> -->
+            <div class="stat">
+              <span class="stat-num">3+</span>
+              <span class="stat-desc">Tech blogs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ EXPERIENCE ═══════════════════════ -->
+    <section id="experience">
+      <h2 class="section-title liquid-text" data-delay="40">Experience.</h2>
+
+      <div class="exp-list">
+        <div class="exp-entry reveal-up" data-delay="80">
+          <div class="exp-year-wrap">
+            <span class="exp-year">2026</span>
+            <span class="exp-now"><span class="now-dot"></span>Now</span>
+          </div>
+          <div class="exp-details">
+            <h3 class="exp-company">IIIT Hyderabad</h3>
+            <span class="exp-title">Research Collaborator, PreCog</span>
+            <ul class="exp-bullets">
+              <li>
+                Investigating cross-platform misinformation propagation using
+                graph neural networks
+              </li>
+              <li>
+                Building a narrative tracing tool to map coordinated inauthentic
+                behaviour at scale
+              </li>
+            </ul>
+          </div>
+          <span class="exp-badge">Research</span>
+        </div>
+
+        <div class="exp-entry reveal-up" data-delay="140">
+          <div class="exp-year-wrap">
+            <span class="exp-year">2024</span>
+            <span class="exp-now"><span class="now-dot"></span>Now</span>
+          </div>
+          <div class="exp-details">
+            <h3 class="exp-company">Microsoft</h3>
+            <span class="exp-title">Software Engineer</span>
+            <ul class="exp-bullets">
+              <li>
+                Designed a distributed caching layer now serving 2M+ daily
+                active users in Teams
+              </li>
+              <li>
+                Led migration of three legacy services to Azure Service Fabric,
+                cutting P99 latency by 18%
+              </li>
+            </ul>
+          </div>
+          <span class="exp-badge">SWE</span>
+        </div>
+
+        <div class="exp-entry reveal-up" data-delay="200">
+          <span class="exp-year">2024</span>
+          <div class="exp-details">
+            <h3 class="exp-company">IIM Ahmedabad</h3>
+            <span class="exp-title">Research Intern</span>
+            <ul class="exp-bullets">
+              <li>
+                Analysed LLM adoption patterns in Indian retail banking with
+                faculty researchers
+              </li>
+              <li>
+                Co-authored a working paper on AI-assisted financial advisory
+                systems
+              </li>
+            </ul>
+          </div>
+          <span class="exp-badge">Research</span>
+        </div>
+
+        <div class="exp-entry reveal-up" data-delay="260">
+          <span class="exp-year">2023</span>
+          <div class="exp-details">
+            <h3 class="exp-company">Microsoft</h3>
+            <span class="exp-title">Software Engineering Intern</span>
+            <ul class="exp-bullets">
+              <li>
+                Shipped pipeline tooling that cut CI latency by 34% across 40+
+                Azure repositories
+              </li>
+              <li>
+                Worked on distributed task scheduling internals within the Azure
+                DevOps team
+              </li>
+            </ul>
+          </div>
+          <span class="exp-badge">Intern</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ WORK ═══════════════════════ -->
+    <section id="work">
+      <div class="section-header">
+        <h2 class="section-title liquid-text" data-delay="60">
+          Selected<br />Work
+        </h2>
+        <p class="section-desc liquid-text">
+          A curated set of projects spanning systems, research, and product.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card card-a reveal-up" data-delay="0">
+          <div class="card-inner">
+            <div class="card-top">
+              <span class="card-num">01</span>
+              <div class="card-tags">
+                <span class="tag">Rust</span>
+                <span class="tag">Distributed Systems</span>
+              </div>
+            </div>
+            <h3 class="card-title liquid-text">Lattice</h3>
+            <p class="card-desc liquid-text">
+              A fault-tolerant distributed key-value store built on Raft
+              consensus. Benchmarked at 180k ops/sec with 99.9% availability
+              under chaos testing.
+            </p>
+            <div class="card-footer">
+              <a href="#" class="card-link" aria-label="View Lattice project">
+                <span>View Project</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path
+                    d="M3 8h10M9 4l4 4-4 4"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card card-b reveal-up" data-delay="80">
+          <div class="card-inner">
+            <div class="card-top">
+              <span class="card-num">02</span>
+              <div class="card-tags">
+                <span class="tag">Python</span>
+                <span class="tag">NLP</span>
+              </div>
+            </div>
+            <h3 class="card-title liquid-text">Semantic Lens</h3>
+            <p class="card-desc liquid-text">
+              Academic paper retrieval using bi-encoder embeddings and
+              approximate nearest-neighbour search over 2M+ papers.
+            </p>
+            <div class="card-footer">
+              <a
+                href="#"
+                class="card-link"
+                aria-label="View Semantic Lens project"
+              >
+                <span>View Project</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path
+                    d="M3 8h10M9 4l4 4-4 4"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card card-c reveal-up" data-delay="80">
+          <div class="card-inner">
+            <div class="card-top">
+              <span class="card-num">03</span>
+              <div class="card-tags">
+                <span class="tag">Go</span>
+                <span class="tag">Observability</span>
+              </div>
+            </div>
+            <h3 class="card-title liquid-text">Observatory</h3>
+            <p class="card-desc liquid-text">
+              Real-time tracing and metrics aggregation pipeline for
+              microservices. Sub-millisecond overhead via lock-free ring
+              buffers.
+            </p>
+            <div class="card-footer">
+              <a
+                href="#"
+                class="card-link"
+                aria-label="View Observatory project"
+              >
+                <span>View Project</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path
+                    d="M3 8h10M9 4l4 4-4 4"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card card-d reveal-up" data-delay="160">
+          <div class="card-inner">
+            <div class="card-top">
+              <span class="card-num">04</span>
+              <div class="card-tags">
+                <span class="tag">TypeScript</span>
+                <span class="tag">Graph Theory</span>
+              </div>
+            </div>
+            <h3 class="card-title liquid-text">Neuron</h3>
+            <p class="card-desc liquid-text">
+              Graph-based knowledge representation layer with bidirectional
+              linking, versioned snapshots, and a diffable AST for structured
+              thought.
+            </p>
+            <div class="card-footer">
+              <a href="#" class="card-link" aria-label="View Neuron project">
+                <span>View Project</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path
+                    d="M3 8h10M9 4l4 4-4 4"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ WRITING ═══════════════════════ -->
+    <section id="writing">
+      <h2 class="section-title liquid-text">Writing.</h2>
+
+      <div class="writing-card reveal-up" id="writingCard">
+        <!-- loading state -->
+        <div class="writing-loading" id="writingLoading">
+          <span>Fetching latest post</span>
+          <span class="wdots"><span>.</span><span>.</span><span>.</span></span>
+        </div>
+        <!-- populated state (hidden until fetch) -->
+        <div class="writing-content" id="writingContent" style="display: none">
+          <div class="writing-eyebrow">
+            <span class="writing-badge">Latest Post</span>
+            <span class="writing-sep">·</span>
+            <span id="postDate" class="writing-meta-text"></span>
+            <span class="writing-sep">·</span>
+            <span id="postReadTime" class="writing-meta-text"></span>
+          </div>
+          <h3 class="writing-title liquid-text" id="postTitle"></h3>
+          <p class="writing-excerpt liquid-text" id="postExcerpt"></p>
+          <div class="writing-footer">
+            <a
+              href="#"
+              class="card-link writing-link"
+              id="postLink"
+              target="_blank"
+              rel="noopener"
+            >
+              <span>Read on Medium</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M3 8h10M9 4l4 4-4 4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- error fallback (hidden by default) -->
+        <div class="writing-error" id="writingError" style="display: none">
+          <p class="writing-error-text">Couldn't load latest post.</p>
+          <a
+            href="https://nisarg-research.medium.com/"
+            class="card-link"
+            target="_blank"
+            rel="noopener"
+          >
+            <span>Visit Medium</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+    <section id="contact">
+      <div class="contact-inner">
+        <h2 class="contact-headline liquid-text">
+          Let's Build<br />Somethink...
+        </h2>
+
+        <a
+          href="mailto:nisarg.personal.work@gmail.com"
+          class="contact-email reveal-up"
+          data-delay="80"
+        >
+          <span class="email-text">nisarg.personal.work@gmail.com</span>
+          <svg
+            class="email-arrow"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+          >
+            <path
+              d="M6 16h20M18 8l8 8-8 8"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+
+        <div class="contact-links reveal-up" data-delay="160">
+          <a
+            href="https://github.com/itsNisarg"
+            class="social-link"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+          <span class="social-sep">·</span>
+          <a
+            href="https://www.linkedin.com/in/nisarg-suthar"
+            class="social-link"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+          <span class="social-sep">·</span>
+          <a
+            href="https://twitter.com/NisargGSuthar"
+            class="social-link"
+            target="_blank"
+            rel="noopener"
+            >X</a
+          >
+          <span class="social-sep">·</span>
+          <a
+            href="https://nisarg-research.medium.com/"
+            class="social-link"
+            target="_blank"
+            rel="noopener"
+            >Medium</a
+          >
+          <span class="social-sep">·</span>
+          <a href="#" class="social-link" target="_blank" rel="noopener"
+            >Resume ↗</a
+          >
+        </div>
+      </div>
+
+      <footer class="site-footer reveal-fade" data-delay="200">
+        <span>© 2026 Nisarg Suthar</span>
+        <span>Designed &amp; built from imagination.</span>
+      </footer>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

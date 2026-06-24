@@ -803,6 +803,25 @@ body.cursor-hover .cursor-dot {
   gap: 8px;
 }
 
+.scroll-to-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-2);
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease), transform 0.3s var(--ease), background 0.3s var(--ease);
+}
+.scroll-to-top:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--surface-hover);
+  transform: translateY(-4px);
+}
+
 /* ═══════════════════════════════════════════
    EXPERIENCE SECTION
 ═══════════════════════════════════════════ */
@@ -1025,6 +1044,11 @@ body.cursor-hover .cursor-dot {
   }
   .nav-link::after {
     display: none;
+  }
+  .site-footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
   }
 }
 

@@ -112,7 +112,7 @@ function init3DTilt(card) {
     card.style.transform = '';
   });
 }
-document.querySelectorAll('.project-card').forEach(init3DTilt);
+document.querySelectorAll('.project-card, .exp-entry, .about-right').forEach(init3DTilt);
 
 /* ─── Liquid text reveal ─────────────────────────────────── */
 (function initLiquidText() {
@@ -182,7 +182,7 @@ document.querySelectorAll('.project-card').forEach(init3DTilt);
     const posts = data.items.slice(0, 2);
     
     posts.forEach((post, index) => {
-      const badgeText = index === 0 ? 'Latest Post' : 'Article';
+      const badgeText = index === 0 ? 'Latest' : 'Article';
       const card = document.createElement('article');
       card.className = 'writing-card reveal-up';
       card.dataset.delay = index * 80;

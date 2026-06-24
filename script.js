@@ -286,7 +286,6 @@ if (navToggle) {
   let dots = [];
   const spacing = 36;
   const dotColor = 'rgba(143, 142, 255, 0.08)';
-  const activeDotColor = 'rgba(143, 142, 255, 0.18)';
   const warpRadius = 136.5;
   const warpForce = 15;
 
@@ -330,6 +329,8 @@ if (navToggle) {
       const dy = my - dot.y;
       const dist = Math.sqrt(dx * dx + dy * dy);
 
+      let color = dotColor;
+
       if (dist < warpRadius && dist > 0) {
         const force = (warpRadius - dist) / warpRadius;
         const angle = Math.atan2(dy, dx);
@@ -339,6 +340,11 @@ if (navToggle) {
 
         dot.x += (targetX - dot.x) * 0.12;
         dot.y += (targetY - dot.y) * 0.12;
+
+        const r = Math.round(143 - (143 - 110) * force);
+        const g = Math.round(142 + (165 - 142) * force);
+        const alpha = 0.08 + force * 0.37;
+        color = `rgba(${r}, ${g}, 255, ${alpha})`;
       } else {
         dot.x += (dot.baseX - dot.x) * 0.08;
         dot.y += (dot.baseY - dot.y) * 0.08;
@@ -346,7 +352,7 @@ if (navToggle) {
 
       ctx.beginPath();
       ctx.arc(dot.x, dot.y, 1.2, 0, Math.PI * 2);
-      ctx.fillStyle = dist < warpRadius ? activeDotColor : dotColor;
+      ctx.fillStyle = color;
       ctx.fill();
     });
 
